@@ -18,7 +18,7 @@ if GUARD and not (now_prg.hour == 8 and now_prg.minute in (29, 30, 31)):
     raise SystemExit(0)
 
 SMTP_HOST = os.environ["SMTP_HOST"]
-SMTP_PORT = os.environ["SMTP_PORT"]
+SMTP_PORT = int(os.environ.get("SMTP_PORT") or "587")
 SMTP_USER = os.environ["SMTP_USER"]
 SMTP_PASS = os.environ["SMTP_PASS"]
 FROM_EMAIL = os.environ["FROM_EMAIL"]
