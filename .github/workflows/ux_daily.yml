@@ -22,23 +22,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Check required env
-        run: |
-          test -n "${{ secrets.SMTP_HOST }}" || (echo "❌ SMTP_HOST missing" && exit 1)
-          test -n "${{ secrets.SMTP_PORT }}" || (echo "❌ SMTP_PORT missing" && exit 1)
-          test -n "${{ secrets.SMTP_USER }}" || (echo "❌ SMTP_USER missing" && exit 1)
-          test -n "${{ secrets.SMTP_PASS }}" || (echo "❌ SMTP_PASS missing" && exit 1)
-          test -n "${{ secrets.FROM_EMAIL }}" || (echo "❌ FROM_EMAIL missing" && exit 1)
-          test -n "${{ secrets.TO_EMAILS }}" || (echo "❌ TO_EMAILS missing" && exit 1)
-          echo "✅ All required secrets present."
-
-      - name: Echo non-sensitive env
-        run: |
-          echo "SMTP_HOST set"
-          echo "SMTP_PORT set"
-          echo "FROM_EMAIL=${{ secrets.FROM_EMAIL }}"
-          echo "TO_EMAILS=${{ secrets.TO_EMAILS }}"
-          echo "TIMEZONE=Europe/Prague"
+      - name: Run sender
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          TO_EMAILS:  ${{ secrets.TO_EMAILS }}   # čárkami oddělené adresy
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}  # volitelné
           AREAS: ${{ secrets.AREAS }}            # např. "přístupnost, design systémy, Figma, AI v UX"
           TIMEZONE: "Europe/Prague"
