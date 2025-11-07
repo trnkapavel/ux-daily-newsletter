@@ -1,0 +1,7 @@
+UX Daily · 7. 11. 2025
+
+- Figma — nové možnosti pro design systémy a tokeny.
+- Material — update k komponentám a motion zásadám.
+- W3C/WCAG — aktualizace mapování přístupnosti.
+
+Tip: Sjednoť tokeny napříč webem a mobilem jako jediný „source of truth“.

@@ -1,0 +1,21 @@
+feeds:
+  - name: Nielsen Norman Group
+    url: https://www.nngroup.com/feed/rss/
+  - name: Smashing Magazine
+    url: https://www.smashingmagazine.com/feed/
+  - name: UX Collective
+    url: https://uxdesign.cc/feed
+  - name: UX Design Institute
+    url: https://www.uxdesigninstitute.com/blog/feed/
+  - name: Figma Blog
+    url: https://www.figma.com/blog/rss/
+  - name: Material Design
+    url: https://material.io/feed.xml
+  - name: Apple HIG
+    url: https://developer.apple.com/news/rss/news.rss
+  - name: W3C/WCAG
+    url: https://www.w3.org/blog/news/feed/
+  - name: Adobe Design
+    url: https://blog.adobe.com/en/topics/design.rss
+  - name: Google Design
+    url: https://design.google/library/rss/

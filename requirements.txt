@@ -1,0 +1,7 @@
+feedparser
+beautifulsoup4
+requests
+python-dateutil
+pytz
+openai>=1.50.0
+pyyaml
